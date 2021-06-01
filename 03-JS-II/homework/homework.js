@@ -148,8 +148,10 @@ function esPrimo(numero) {
   if (numero === 1 || numero === 0 ){
     return false;
   }
-  for (let i=2; i===numero-1; i++){
-    if(0===(numero%i)){
+  var j = numero - 1;
+  
+  for (let i=2; i<=j; i++){
+    if((numero%i)===0){
       return false;
     }
   }
@@ -169,12 +171,11 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  let array1=[];
-  let e;
-  for (let i = 0; i ===60 ; i++) {
+  var array1=[];
+  var e;
+  for (let i = 0; i <=10 ; i++) {
     e=i*6;
-    console.log(e)
-    array1[i]=e;
+    array1.push(e);
   }
   return array1;
 }
@@ -182,7 +183,7 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  if (numero.length===100 ){
+  if (numero.toString().length===3 ){
     return true;
   }else return false;
 }
@@ -191,6 +192,12 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  let j=0;
+  do{
+    numero=numero+5;
+    j++;
+  }while(j<8)
+  return numero;
 }
 
 
